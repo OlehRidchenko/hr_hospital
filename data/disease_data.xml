@@ -1,0 +1,16 @@
+<odoo>
+    <record id="disease_1" model="hr_hospital.disease">
+        <field name="name">Flu</field>
+        <field name="description">Influenza virus infection</field>
+    </record>
+
+    <record id="disease_2" model="hr_hospital.disease">
+        <field name="name">Diabetes</field>
+        <field name="description">Chronic metabolic disease</field>
+    </record>
+
+    <record id="disease_3" model="hr_hospital.disease">
+        <field name="name">Hypertension</field>
+        <field name="description">High blood pressure</field>
+    </record>
+</odoo>
