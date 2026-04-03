@@ -1,0 +1,139 @@
+<odoo>
+    <record id="demo_doctor_1" model="hr_hospital.doctor">
+        <field name="last_name">Kovalenko</field>
+        <field name="first_name">Mykola</field>
+        <field name="middle_name">Ivanovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1975-03-15</field>
+        <field name="phone">+380501234567</field>
+        <field name="email">kovalenko@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_surgery"/>
+        <field name="license_number">LIC-DEMO-001</field>
+        <field name="license_date">2000-06-01</field>
+        <field name="is_intern">False</field>
+        <field name="rating">4.80</field>
+        <field name="study_country_id" ref="base.ua"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_doctor_2" model="hr_hospital.doctor">
+        <field name="last_name">Bondarenko</field>
+        <field name="first_name">Olena</field>
+        <field name="middle_name">Vasylivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1980-07-22</field>
+        <field name="phone">+380502345678</field>
+        <field name="email">bondarenko@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_cardiology"/>
+        <field name="license_number">LIC-DEMO-002</field>
+        <field name="license_date">2005-09-15</field>
+        <field name="is_intern">False</field>
+        <field name="rating">4.60</field>
+        <field name="study_country_id" ref="base.ua"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_doctor_3" model="hr_hospital.doctor">
+        <field name="last_name">Melnyk</field>
+        <field name="first_name">Vasyl</field>
+        <field name="middle_name">Petrovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1978-11-10</field>
+        <field name="phone">+380503456789</field>
+        <field name="email">melnyk@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_neurology"/>
+        <field name="license_number">LIC-DEMO-003</field>
+        <field name="license_date">2003-04-20</field>
+        <field name="is_intern">False</field>
+        <field name="rating">4.40</field>
+        <field name="study_country_id" ref="base.pl"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_doctor_4" model="hr_hospital.doctor">
+        <field name="last_name">Tkachenko</field>
+        <field name="first_name">Iryna</field>
+        <field name="middle_name">Oleksandrivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1982-05-18</field>
+        <field name="phone">+380504567890</field>
+        <field name="email">tkachenko@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_pediatrics"/>
+        <field name="license_number">LIC-DEMO-004</field>
+        <field name="license_date">2007-08-10</field>
+        <field name="is_intern">False</field>
+        <field name="rating">4.90</field>
+        <field name="study_country_id" ref="base.de"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_doctor_5" model="hr_hospital.doctor">
+        <field name="last_name">Savchenko</field>
+        <field name="first_name">Dmytro</field>
+        <field name="middle_name">Mykolayovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1985-09-25</field>
+        <field name="phone">+380505678901</field>
+        <field name="email">savchenko@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_therapy"/>
+        <field name="license_number">LIC-DEMO-005</field>
+        <field name="license_date">2010-03-05</field>
+        <field name="is_intern">False</field>
+        <field name="rating">4.20</field>
+        <field name="study_country_id" ref="base.ua"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_doctor_6" model="hr_hospital.doctor">
+        <field name="last_name">Kravchenko</field>
+        <field name="first_name">Serhiy</field>
+        <field name="middle_name">Volodymyrovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1970-01-30</field>
+        <field name="phone">+380506789012</field>
+        <field name="email">kravchenko@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_surgery"/>
+        <field name="license_number">LIC-DEMO-006</field>
+        <field name="license_date">1995-11-20</field>
+        <field name="is_intern">False</field>
+        <field name="rating">5.00</field>
+        <field name="study_country_id" ref="base.ua"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_doctor_7" model="hr_hospital.doctor">
+        <field name="last_name">Moroz</field>
+        <field name="first_name">Anastasia</field>
+        <field name="middle_name">Ihorivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1998-04-12</field>
+        <field name="phone">+380507890123</field>
+        <field name="email">moroz@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_cardiology"/>
+        <field name="license_number">LIC-DEMO-007</field>
+        <field name="license_date">2023-09-01</field>
+        <field name="is_intern">True</field>
+        <field name="mentor_id" ref="demo_doctor_2"/>
+        <field name="rating">3.50</field>
+        <field name="study_country_id" ref="base.ua"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_doctor_8" model="hr_hospital.doctor">
+        <field name="last_name">Lysenko</field>
+        <field name="first_name">Bohdan</field>
+        <field name="middle_name">Serhiyovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1997-08-03</field>
+        <field name="phone">+380508901234</field>
+        <field name="email">lysenko@hospital.ua</field>
+        <field name="speciality_id" ref="demo_speciality_surgery"/>
+        <field name="license_number">LIC-DEMO-008</field>
+        <field name="license_date">2023-09-01</field>
+        <field name="is_intern">True</field>
+        <field name="mentor_id" ref="demo_doctor_1"/>
+        <field name="rating">3.80</field>
+        <field name="study_country_id" ref="base.ua"/>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+</odoo>

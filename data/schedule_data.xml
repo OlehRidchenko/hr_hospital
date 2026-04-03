@@ -1,0 +1,97 @@
+<odoo>
+    <record id="demo_schedule_1" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="day_of_week">mon</field>
+        <field name="time_start">8.0</field>
+        <field name="time_end">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_2" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="day_of_week">wed</field>
+        <field name="time_start">8.0</field>
+        <field name="time_end">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_3" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="day_of_week">fri</field>
+        <field name="time_start">8.0</field>
+        <field name="time_end">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_4" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="day_of_week">mon</field>
+        <field name="time_start">9.0</field>
+        <field name="time_end">17.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_5" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="day_of_week">tue</field>
+        <field name="time_start">9.0</field>
+        <field name="time_end">17.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_6" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="day_of_week">tue</field>
+        <field name="time_start">8.0</field>
+        <field name="time_end">14.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_7" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="day_of_week">thu</field>
+        <field name="time_start">8.0</field>
+        <field name="time_end">14.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_8" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_4"/>
+        <field name="day_of_week">wed</field>
+        <field name="time_start">10.0</field>
+        <field name="time_end">18.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_9" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_5"/>
+        <field name="day_of_week">mon</field>
+        <field name="time_start">8.0</field>
+        <field name="time_end">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_10" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_6"/>
+        <field name="day_of_week">fri</field>
+        <field name="time_start">9.0</field>
+        <field name="time_end">17.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_11" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_7"/>
+        <field name="day_of_week">mon</field>
+        <field name="time_start">9.0</field>
+        <field name="time_end">17.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+
+    <record id="demo_schedule_12" model="doctor.schedule">
+        <field name="doctor_id" ref="demo_doctor_8"/>
+        <field name="day_of_week">tue</field>
+        <field name="time_start">8.0</field>
+        <field name="time_end">16.0</field>
+        <field name="schedule_type">workday</field>
+    </record>
+</odoo>

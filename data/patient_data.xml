@@ -1,0 +1,216 @@
+<odoo>
+    <record id="demo_patient_1" model="hr_hospital.patient">
+        <field name="last_name">Kovalchuk</field>
+        <field name="first_name">Ivan</field>
+        <field name="middle_name">Mykolayovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1985-06-15</field>
+        <field name="phone">+380671234501</field>
+        <field name="blood_group">o_pos</field>
+        <field name="allergies">Penicillin</field>
+        <field name="personal_doctor_id" ref="demo_doctor_1"/>
+        <field name="contact_person_id" ref="demo_contact_1"/>
+        <field name="passport_data">AA1234561</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_2" model="hr_hospital.patient">
+        <field name="last_name">Marchenko</field>
+        <field name="first_name">Olha</field>
+        <field name="middle_name">Vasylivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1990-03-22</field>
+        <field name="phone">+380671234502</field>
+        <field name="blood_group">a_pos</field>
+        <field name="allergies">Aspirin, Ibuprofen</field>
+        <field name="personal_doctor_id" ref="demo_doctor_2"/>
+        <field name="contact_person_id" ref="demo_contact_2"/>
+        <field name="passport_data">AA1234562</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_3" model="hr_hospital.patient">
+        <field name="last_name">Rudenko</field>
+        <field name="first_name">Serhiy</field>
+        <field name="middle_name">Oleksiyovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1978-11-08</field>
+        <field name="phone">+380671234503</field>
+        <field name="blood_group">b_neg</field>
+        <field name="allergies">None</field>
+        <field name="personal_doctor_id" ref="demo_doctor_3"/>
+        <field name="contact_person_id" ref="demo_contact_3"/>
+        <field name="passport_data">AA1234563</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_4" model="hr_hospital.patient">
+        <field name="last_name">Bondar</field>
+        <field name="first_name">Natalia</field>
+        <field name="middle_name">Ivanivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1995-07-30</field>
+        <field name="phone">+380671234504</field>
+        <field name="blood_group">ab_pos</field>
+        <field name="allergies">Latex, Sulfa drugs</field>
+        <field name="personal_doctor_id" ref="demo_doctor_4"/>
+        <field name="contact_person_id" ref="demo_contact_4"/>
+        <field name="passport_data">AA1234564</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_5" model="hr_hospital.patient">
+        <field name="last_name">Hrytsenko</field>
+        <field name="first_name">Mykhailo</field>
+        <field name="middle_name">Pavlovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1965-01-14</field>
+        <field name="phone">+380671234505</field>
+        <field name="blood_group">o_neg</field>
+        <field name="allergies">Codeine</field>
+        <field name="personal_doctor_id" ref="demo_doctor_5"/>
+        <field name="contact_person_id" ref="demo_contact_5"/>
+        <field name="passport_data">AA1234565</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_6" model="hr_hospital.patient">
+        <field name="last_name">Ponomarenko</field>
+        <field name="first_name">Yulia</field>
+        <field name="middle_name">Dmytrivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">2000-09-05</field>
+        <field name="phone">+380671234506</field>
+        <field name="blood_group">a_neg</field>
+        <field name="allergies">None</field>
+        <field name="personal_doctor_id" ref="demo_doctor_1"/>
+        <field name="passport_data">AA1234566</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_7" model="hr_hospital.patient">
+        <field name="last_name">Zinchenko</field>
+        <field name="first_name">Andriy</field>
+        <field name="middle_name">Volodymyrovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1988-12-19</field>
+        <field name="phone">+380671234507</field>
+        <field name="blood_group">b_pos</field>
+        <field name="allergies">Peanuts, Tree nuts</field>
+        <field name="personal_doctor_id" ref="demo_doctor_2"/>
+        <field name="passport_data">AA1234567</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_8" model="hr_hospital.patient">
+        <field name="last_name">Karpenko</field>
+        <field name="first_name">Svitlana</field>
+        <field name="middle_name">Hryhorivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1972-04-27</field>
+        <field name="phone">+380671234508</field>
+        <field name="blood_group">o_pos</field>
+        <field name="allergies">None</field>
+        <field name="personal_doctor_id" ref="demo_doctor_3"/>
+        <field name="passport_data">AA1234568</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_9" model="hr_hospital.patient">
+        <field name="last_name">Horobets</field>
+        <field name="first_name">Oksana</field>
+        <field name="middle_name">Mykhaylivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1993-08-11</field>
+        <field name="phone">+380671234509</field>
+        <field name="blood_group">a_pos</field>
+        <field name="allergies">Shellfish</field>
+        <field name="personal_doctor_id" ref="demo_doctor_4"/>
+        <field name="passport_data">AA1234569</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_10" model="hr_hospital.patient">
+        <field name="last_name">Fedorenko</field>
+        <field name="first_name">Viktor</field>
+        <field name="middle_name">Anatoliyovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1960-02-28</field>
+        <field name="phone">+380671234510</field>
+        <field name="blood_group">ab_neg</field>
+        <field name="allergies">Penicillin, Cephalosporins</field>
+        <field name="personal_doctor_id" ref="demo_doctor_6"/>
+        <field name="passport_data">AA1234570</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_11" model="hr_hospital.patient">
+        <field name="last_name">Lysak</field>
+        <field name="first_name">Tetiana</field>
+        <field name="middle_name">Borysivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1997-05-16</field>
+        <field name="phone">+380671234511</field>
+        <field name="blood_group">b_pos</field>
+        <field name="allergies">None</field>
+        <field name="personal_doctor_id" ref="demo_doctor_5"/>
+        <field name="passport_data">AA1234571</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_12" model="hr_hospital.patient">
+        <field name="last_name">Danyliuk</field>
+        <field name="first_name">Roman</field>
+        <field name="middle_name">Vasylovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1983-10-03</field>
+        <field name="phone">+380671234512</field>
+        <field name="blood_group">o_pos</field>
+        <field name="allergies">Aspirin</field>
+        <field name="personal_doctor_id" ref="demo_doctor_1"/>
+        <field name="passport_data">AA1234572</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_13" model="hr_hospital.patient">
+        <field name="last_name">Sorokina</field>
+        <field name="first_name">Maryna</field>
+        <field name="middle_name">Leonidivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1975-07-21</field>
+        <field name="phone">+380671234513</field>
+        <field name="blood_group">a_neg</field>
+        <field name="allergies">None</field>
+        <field name="personal_doctor_id" ref="demo_doctor_6"/>
+        <field name="passport_data">AA1234573</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_14" model="hr_hospital.patient">
+        <field name="last_name">Havryliuk</field>
+        <field name="first_name">Oleksandr</field>
+        <field name="middle_name">Yuriyovych</field>
+        <field name="gender">male</field>
+        <field name="birth_date">1991-03-09</field>
+        <field name="phone">+380671234514</field>
+        <field name="blood_group">b_neg</field>
+        <field name="allergies">Morphine</field>
+        <field name="personal_doctor_id" ref="demo_doctor_3"/>
+        <field name="passport_data">AA1234574</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+
+    <record id="demo_patient_15" model="hr_hospital.patient">
+        <field name="last_name">Yurchenko</field>
+        <field name="first_name">Valentyna</field>
+        <field name="middle_name">Stepanivna</field>
+        <field name="gender">female</field>
+        <field name="birth_date">1968-12-31</field>
+        <field name="phone">+380671234515</field>
+        <field name="blood_group">ab_pos</field>
+        <field name="allergies">None</field>
+        <field name="personal_doctor_id" ref="demo_doctor_4"/>
+        <field name="passport_data">AA1234575</field>
+        <field name="country_id" ref="base.ua"/>
+    </record>
+</odoo>

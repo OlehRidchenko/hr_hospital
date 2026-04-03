@@ -1,0 +1,236 @@
+<odoo>
+    <record id="doctor_schedule_view_tree" model="ir.ui.view">
+        <field name="name">doctor.schedule.tree</field>
+        <field name="model">doctor.schedule</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="doctor_id"/>
+                <field name="day_of_week"/>
+                <field name="date"/>
+                <field name="time_start" widget="float_time"/>
+                <field name="time_end" widget="float_time"/>
+                <field name="duration" widget="float_time"/>
+                <field name="schedule_type"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="doctor_schedule_view_form" model="ir.ui.view">
+        <field name="name">doctor.schedule.form</field>
+        <field name="model">doctor.schedule</field>
+        <field name="arch" type="xml">
+            <form string="Doctor Schedule">
+                <group>
+                    <group>
+                        <field name="doctor_id"/>
+                        <field name="schedule_type"/>
+                        <field name="notes"/>
+                    </group>
+                    <group>
+                        <field name="day_of_week"/>
+                        <field name="date"/>
+                        <field name="time_start" widget="float_time"/>
+                        <field name="time_end" widget="float_time"/>
+                        <field name="duration" widget="float_time"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="doctor_schedule_action" model="ir.actions.act_window">
+        <field name="name">Doctor Schedules</field>
+        <field name="res_model">doctor.schedule</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="doctor_speciality_view_tree" model="ir.ui.view">
+        <field name="name">doctor.speciality.tree</field>
+        <field name="model">doctor.speciality</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="doctor_speciality_view_form" model="ir.ui.view">
+        <field name="name">doctor.speciality.form</field>
+        <field name="model">doctor.speciality</field>
+        <field name="arch" type="xml">
+            <form string="Doctor Speciality">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Doctors">
+                        <field name="doctor_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="license_number"/>
+                                <field name="rating"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="doctor_speciality_action" model="ir.actions.act_window">
+        <field name="name">Specialities</field>
+        <field name="res_model">doctor.speciality</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="contact_person_view_tree" model="ir.ui.view">
+        <field name="name">contact.person.tree</field>
+        <field name="model">contact.person</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="gender"/>
+                <field name="relationship"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="contact_person_view_form" model="ir.ui.view">
+        <field name="name">contact.person.form</field>
+        <field name="model">contact.person</field>
+        <field name="arch" type="xml">
+            <form string="Contact Person">
+                <group>
+                    <group string="Name">
+                        <field name="last_name"/>
+                        <field name="first_name"/>
+                        <field name="middle_name"/>
+                        <field name="relationship"/>
+                    </group>
+                    <group string="Contacts">
+                        <field name="phone"/>
+                        <field name="email"/>
+                        <field name="gender"/>
+                        <field name="birth_date"/>
+                        <field name="age"/>
+                    </group>
+                </group>
+                <group string="Notes">
+                    <field name="notes" nolabel="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="contact_person_action" model="ir.actions.act_window">
+        <field name="name">Contact Persons</field>
+        <field name="res_model">contact.person</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="patient_doctor_history_view_tree" model="ir.ui.view">
+        <field name="name">patient.doctor.history.tree</field>
+        <field name="model">patient.doctor.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="assigned_date"/>
+                <field name="changed_date"/>
+                <field name="active"/>
+                <field name="reason"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="patient_doctor_history_view_form" model="ir.ui.view">
+        <field name="name">patient.doctor.history.form</field>
+        <field name="model">patient.doctor.history</field>
+        <field name="arch" type="xml">
+            <form string="Doctor History">
+                <group>
+                    <group>
+                        <field name="patient_id"/>
+                        <field name="doctor_id"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="assigned_date"/>
+                        <field name="changed_date"/>
+                    </group>
+                </group>
+                <group string="Reason for Change">
+                    <field name="reason" nolabel="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="patient_doctor_history_action" model="ir.actions.act_window">
+        <field name="name">Doctor History</field>
+        <field name="res_model">patient.doctor.history</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="medical_diagnosis_view_tree" model="ir.ui.view">
+        <field name="name">medical.diagnosis.tree</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="visit_id"/>
+                <field name="disease_id"/>
+                <field name="severity"/>
+                <field name="is_approved"/>
+                <field name="approved_doctor_id"/>
+                <field name="approval_datetime"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_view_form" model="ir.ui.view">
+        <field name="name">medical.diagnosis.form</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <form string="Medical Diagnosis">
+                <group>
+                    <group>
+                        <field name="visit_id"/>
+                        <field name="disease_id"/>
+                        <field name="severity"/>
+                    </group>
+                    <group>
+                        <field name="is_approved"/>
+                        <field name="approved_doctor_id"/>
+                        <field name="approval_datetime"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page string="Description">
+                        <field name="description"/>
+                    </page>
+                    <page string="Treatment">
+                        <field name="treatment"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_action" model="ir.actions.act_window">
+        <field name="name">Diagnoses</field>
+        <field name="res_model">medical.diagnosis</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

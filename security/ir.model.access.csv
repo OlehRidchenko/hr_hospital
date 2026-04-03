@@ -3,3 +3,15 @@ access_doctor_user,doctor_user,model_hr_hospital_doctor,base.group_user,1,1,1,1
 access_patient_user,patient_user,model_hr_hospital_patient,base.group_user,1,1,1,1
 access_disease_user,disease_user,model_hr_hospital_disease,base.group_user,1,1,1,1
 access_visit_user,visit_user,model_hr_hospital_visit,base.group_user,1,1,1,1
+
+access_speciality_user,speciality_user,model_doctor_speciality,base.group_user,1,1,1,1
+access_schedule_user,schedule_user,model_doctor_schedule,base.group_user,1,1,1,1
+access_contact_person_user,contact_person_user,model_contact_person,base.group_user,1,1,1,1
+access_patient_doctor_history_user,patient_doctor_history_user,model_patient_doctor_history,base.group_user,1,1,1,1
+access_medical_diagnosis_user,medical_diagnosis_user,model_medical_diagnosis,base.group_user,1,1,1,1
+
+access_mass_reassign_wizard,mass_reassign_wizard,model_mass_reassign_doctor_wizard,base.group_user,1,1,1,1
+access_disease_report_wizard,disease_report_wizard,model_disease_report_wizard,base.group_user,1,1,1,1
+access_reschedule_visit_wizard,reschedule_visit_wizard,model_reschedule_visit_wizard,base.group_user,1,1,1,1
+access_doctor_schedule_wizard,doctor_schedule_wizard,model_doctor_schedule_wizard,base.group_user,1,1,1,1
+access_patient_card_export_wizard,patient_card_export_wizard,model_patient_card_export_wizard,base.group_user,1,1,1,1
