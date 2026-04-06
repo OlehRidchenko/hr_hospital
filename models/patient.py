@@ -92,14 +92,14 @@ class Patient(models.Model):
                     ])
                     old_history.write({
                         "active": False,
-                        "date_changed": fields.Date.today(),
+                        "changed_date": fields.Date.today(),
                     })
 
                 if new_doctor_id:
                     self.env["patient.doctor.history"].create({
                         "patient_id": rec.id,
                         "doctor_id": new_doctor_id,
-                        "date_assigned": fields.Date.today(),
+                        "assigned_date": fields.Date.today(),
                         "active": True,
                     })
 

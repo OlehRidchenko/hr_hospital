@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id="disease_report_wizard_view_form" model="ir.ui.view">
         <field name="name">disease.report.wizard.form</field>
@@ -15,7 +16,7 @@
                     <group string="Report Settings">
                         <field name="report_type"/>
                         <field name="group_by"/>
-                        <field name="result_count"/>
+                        <field name="result_count" readonly="1"/>
                     </group>
                 </group>
                 <footer>
@@ -32,6 +33,65 @@
                     />
                 </footer>
             </form>
+        </field>
+    </record>
+
+    <record id="medical_diagnosis_view_search" model="ir.ui.view">
+        <field name="name">medical.diagnosis.search</field>
+        <field name="model">medical.diagnosis</field>
+        <field name="arch" type="xml">
+            <search string="Search Diagnoses">
+                <field name="disease_id"/>
+                <field name="visit_id"/>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+
+                <filter name="filter_approved"
+                        string="Approved"
+                        domain="[('is_approved', '=', True)]"/>
+                <filter name="filter_not_approved"
+                        string="Not Approved"
+                        domain="[('is_approved', '=', False)]"/>
+                <separator/>
+                <filter name="filter_critical"
+                        string="Critical"
+                        domain="[('severity', '=', 'critical')]"/>
+                <filter name="filter_severe"
+                        string="Severe"
+                        domain="[('severity', '=', 'severe')]"/>
+                <separator/>
+
+                <filter name="search_default_disease_id"
+                        string="Group by Disease"
+                        context="{'group_by': 'disease_id'}"/>
+                <filter name="search_default_severity"
+                        string="Group by Severity"
+                        context="{'group_by': 'severity'}"/>
+                <filter name="search_default_is_approved"
+                        string="Group by Approval"
+                        context="{'group_by': 'is_approved'}"/>
+                <filter name="search_default_doctor_id"
+                        string="Group by Doctor"
+                        context="{'group_by': 'doctor_id'}"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="group_disease"
+                            string="By Disease"
+                            context="{'group_by': 'disease_id'}"/>
+                    <filter name="group_severity"
+                            string="By Severity"
+                            context="{'group_by': 'severity'}"/>
+                    <filter name="group_approved"
+                            string="By Approval"
+                            context="{'group_by': 'is_approved'}"/>
+                    <filter name="group_doctor"
+                            string="By Doctor"
+                            context="{'group_by': 'doctor_id'}"/>
+                    <filter name="group_patient"
+                            string="By Patient"
+                            context="{'group_by': 'patient_id'}"/>
+                </group>
+            </search>
         </field>
     </record>
 

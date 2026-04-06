@@ -10,7 +10,7 @@
                         <field name="new_doctor_id"/>
                     </group>
                     <group string="Details">
-                        <field name="change_date"/>
+                        <field name="changed_date"/>
                         <field name="reason"/>
                     </group>
                 </group>

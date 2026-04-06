@@ -10,7 +10,7 @@
                 <field name="planned_datetime"/>
                 <field name="actual_datetime"/>
                 <field name="visit_type"/>
-                <field name="diagnosis_ids"/>
+                <field name="diagnosis_count"/>
                 <field name="recommendations"/>
                 <field name="currency_id"/>
                 <field name="cost"/>

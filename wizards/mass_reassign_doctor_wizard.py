@@ -20,7 +20,7 @@ class MassReassignDoctorWizard(models.TransientModel):
         string="Patients",
         domain="[('personal_doctor_id', '=', old_doctor_id)]",
     )
-    change_date = fields.Date(
+    changed_date = fields.Date(
         required=True,
         default=fields.Date.today,
     )
@@ -69,7 +69,7 @@ class MassReassignDoctorWizard(models.TransientModel):
             if last_history:
                 last_history.write({
                     "reason": self.reason,
-                    "assigned_date": self.change_date,
+                    "assigned_date": self.changed_date,
                 })
         return {
             "type": "ir.actions.client",

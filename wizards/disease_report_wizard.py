@@ -19,31 +19,28 @@ class DiseaseReportWizard(models.TransientModel):
         string="Countries",
     )
     date_from = fields.Date(
+        string="Date From",
         required=True,
     )
     date_to = fields.Date(
+        string="Date To",
         required=True,
     )
     report_type = fields.Selection([
         ("detailed", "Detailed"),
         ("summary", "Summary"),
-    ], default="detailed")
+    ], string="Report Type", default="detailed")
 
     group_by = fields.Selection([
-        ("doctor", "By Doctor"),
-        ("disease", "By Disease"),
-        ("month", "By Month"),
-        ("country", "By Country"),
-    ], default="doctor")
+        ("disease_id", "By Disease"),
+        ("severity", "By Severity"),
+        ("is_approved", "By Approval Status"),
+        ("doctor_id", "By Doctor"),
+    ], string="Group By", default="disease_id")
 
-    result_ids = fields.Many2many(
-        "medical.diagnosis",
-        string="Results",
-        compute="_compute_results",
-    )
     result_count = fields.Integer(
         string="Total Results",
-        compute="_compute_results",
+        compute="_compute_result_count",
     )
 
     @api.constrains("date_from", "date_to")
@@ -54,15 +51,14 @@ class DiseaseReportWizard(models.TransientModel):
                     "Date From cannot be later than Date To!"
                 )
 
-    @api.depends(
-        "doctor_ids", "disease_ids", "country_ids",
-        "date_from", "date_to"
-    )
-    def _compute_results(self):
+    @api.depends("doctor_ids", "disease_ids", "country_ids",
+                 "date_from", "date_to")
+    def _compute_result_count(self):
         for rec in self:
-            diagnoses = rec._get_diagnoses()
-            rec.result_ids = diagnoses
-            rec.result_count = len(diagnoses)
+            if rec.date_from and rec.date_to:
+                rec.result_count = len(rec._get_diagnoses())
+            else:
+                rec.result_count = 0
 
     def _get_diagnoses(self):
         self.ensure_one()
@@ -80,11 +76,8 @@ class DiseaseReportWizard(models.TransientModel):
             )
         if self.country_ids:
             domain.append(
-                (
-                    "visit_id.patient_id.country_id",
-                    "in",
-                    self.country_ids.ids,
-                )
+                ("visit_id.patient_id.country_id", "in",
+                 self.country_ids.ids)
             )
         return self.env["medical.diagnosis"].search(domain)
 
@@ -95,14 +88,19 @@ class DiseaseReportWizard(models.TransientModel):
             raise ValidationError(
                 "No diagnoses found for the selected criteria!"
             )
+
+        context = {}
+        if self.group_by:
+            context[f"search_default_{self.group_by}"] = 1
+
         return {
             "type": "ir.actions.act_window",
-            "name": "Disease Report",
+            "name": (
+                f"Disease Report "
+                f"({self.date_from} — {self.date_to})"
+            ),
             "res_model": "medical.diagnosis",
             "view_mode": "list,form",
             "domain": [("id", "in", diagnoses.ids)],
-            "context": {
-                "group_by": self.group_by,
-                "report_type": self.report_type,
-            },
+            "context": context,
         }
