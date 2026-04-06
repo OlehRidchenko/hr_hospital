@@ -64,3 +64,24 @@ class MedicalDiagnosis(models.Model):
         else:
             self.approved_doctor_id = False
             self.approval_datetime = False
+
+    @api.model
+    def create(self, vals):
+        if vals.get("is_approved"):
+            doctor = self._get_current_doctor()
+            vals.update({
+                "approved_doctor_id": doctor.id if doctor else False,
+                "approval_datetime": fields.Datetime.now(),
+            })
+        else:
+            vals.update({
+                "approved_doctor_id": False,
+                "approval_datetime": False,
+            })
+        return super().create(vals)
+
+    def _get_current_doctor(self):
+        return self.env["hr_hospital.doctor"].search(
+            [("user_id", "=", self.env.uid)],
+            limit=1,
+        )
