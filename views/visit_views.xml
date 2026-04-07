@@ -28,7 +28,7 @@
                     <group>
                         <field name="patient_id"/>
                         <field name="doctor_id"/>
-                        <field name="status"/>
+                        <field name="status" widget = "statusbar"/>
                         <field name="planned_datetime"/>
                         <field name="actual_datetime"/>
                         <field name="visit_type"/>
@@ -43,9 +43,50 @@
         </field>
     </record>
 
+    <record id="visit_view_search" model="ir.ui.view">
+        <field name="name">visit.search</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="doctor_id"/>
+                <field name="patient_id"/>
+                <field name="planned_datetime"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_by_status" context="{'group_by': 'status'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="visit_view_pivot" model="ir.ui.view">
+        <field name="name">visit.pivot</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="doctor_id" type="row"/>
+                <field name="status" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="visit_view_calendar" model="ir.ui.view">
+        <field name="name">visit.calendar</field>
+        <field name="model">hr_hospital.visit</field>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+              <calendar string='Calendar of visits' create='1' color="status" quick_create='0' mode='month' scales='day,week,month,year' date_start='planned_datetime'
+                form_view_id='%(hr_hospital.visit_view_form)d' event_open_popup='True'>
+                <field name="doctor_id" filters="1" invisible="1"/>
+                <field name="patient_id" filters="1" invisible="1"/>
+                <field name="status" filters="1" invisible="1"/>
+            </calendar>
+        </field>
+    </record>
+
     <record id="visit_action" model="ir.actions.act_window">
         <field name="name">Visits</field>
         <field name="res_model">hr_hospital.visit</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search,pivot,calendar</field>
     </record>
 </odoo>

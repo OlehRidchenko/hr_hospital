@@ -48,6 +48,18 @@ class Patient(models.Model):
         string="Doctor History",
     )
 
+    quick_visit_ids = fields.One2many(
+        "hr_hospital.visit",
+        "patient_id",
+        string="Visits",
+    )
+
+    diagnosis_history_ids = fields.One2many(
+        "medical.diagnosis",
+        "patient_id",
+        string="Diagnosis History",
+    )
+
     @api.constrains("birth_date")
     def _check_age(self):
         for rec in self:
@@ -104,3 +116,13 @@ class Patient(models.Model):
                     })
 
         return super().write(vals)
+
+    def action_view_visits(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Visit History',
+            'res_model': 'hr_hospital.visit',
+            'view_mode': 'tree,form',
+            'domain': [('patient_id', '=', self.id)],
+            'context': {'default_patient_id': self.id},
+        }

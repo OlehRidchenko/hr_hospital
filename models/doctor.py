@@ -47,6 +47,13 @@ class Doctor(models.Model):
         string="Country of Study",
     )
 
+    intern_ids = fields.One2many(
+        "hr_hospital.doctor",
+        "mentor_id",
+        string="Interns",
+        domain=[("is_intern", "=", True)],
+    )
+
     _sql_constraints = [
         (
             "license_number_unique",
@@ -118,3 +125,15 @@ class Doctor(models.Model):
                 raise ValidationError(
                     "A doctor cannot be their own mentor!"
                 )
+
+    def action_quick_visit(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Book Appointment',
+            'res_model': 'hr_hospital.visit',
+            'view_mode': 'form',
+            'target': 'new',
+            'context': {
+                'default_doctor_id': self.id,
+            },
+        }

@@ -12,6 +12,7 @@
         'views/patient_views.xml',
         'views/disease_views.xml',
         'views/visit_views.xml',
+        'views/diagnosis_views.xml',
         'views/wizard_views.xml',
 
         'wizards/mass_reassign_doctor_wizard_views.xml',
