@@ -1,18 +1,105 @@
 <odoo>
-    <menuitem id="hr_hospital_menu" name="Hospital" sequence="300"/>
+    <menuitem
+        id="hr_hospital_menu"
+        name="Hospital"
+        sequence="300"
+    />
 
-    <menuitem id="menu_doctors"
-              name="Doctors"
-              parent="hr_hospital_menu"
-              action="doctor_action"/>
+    <menuitem
+        id="menu_reception"
+        name="Reception"
+        parent="hr_hospital_menu"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_visits"
+        name="Visits"
+        parent="menu_reception"
+        action="visit_action"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_disease_report_wizard"
+        name="Disease Report"
+        parent="menu_reception"
+        action="disease_report_wizard_action"
+        sequence="2"
+    />
 
-    <menuitem id="menu_patients"
-              name="Patients"
-              parent="hr_hospital_menu"
-              action="patient_action"/>
+    <menuitem
+        id="menu_staff"
+        name="Staff"
+        parent="hr_hospital_menu"
+        sequence="2"
+    />
+    <menuitem
+        id="menu_doctors"
+        name="Doctors"
+        parent="menu_staff"
+        action="doctor_action"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_doctor_schedule"
+        name="Schedules"
+        parent="menu_staff"
+        action="doctor_schedule_action"
+        sequence="2"
+    />
+    <menuitem
+        id="menu_doctor_speciality"
+        name="Specialities"
+        parent="menu_staff"
+        action="doctor_speciality_action"
+        sequence="3"
+    />
 
-    <menuitem id="menu_diseases"
-              name="Diseases"
-              parent="hr_hospital_menu"
-              action="disease_action"/>
+    <menuitem
+        id="menu_patients_root"
+        name="Patients"
+        parent="hr_hospital_menu"
+        sequence="3"
+    />
+    <menuitem
+        id="menu_patients"
+        name="Patients"
+        parent="menu_patients_root"
+        action="patient_action"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_contact_persons"
+        name="Contact Persons"
+        parent="menu_patients_root"
+        action="contact_person_action"
+        sequence="2"
+    />
+    <menuitem
+        id="menu_doctor_history"
+        name="Doctor History"
+        parent="menu_patients_root"
+        action="patient_doctor_history_action"
+        sequence="3"
+    />
+
+    <menuitem
+        id="menu_medical"
+        name="Medical"
+        parent="hr_hospital_menu"
+        sequence="4"
+    />
+    <menuitem
+        id="menu_diseases"
+        name="Diseases"
+        parent="menu_medical"
+        action="disease_action"
+        sequence="1"
+    />
+    <menuitem
+        id="menu_diagnoses"
+        name="Diagnoses"
+        parent="menu_medical"
+        action="medical_diagnosis_action"
+        sequence="2"
+    />
 </odoo>

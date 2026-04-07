@@ -1,0 +1,36 @@
+<odoo>
+    <record id="demo_contact_1" model="contact.person">
+        <field name="last_name">Smith</field>
+        <field name="first_name">Anna</field>
+        <field name="phone">+380501111111</field>
+        <field name="relationship">spouse</field>
+    </record>
+
+    <record id="demo_contact_2" model="contact.person">
+        <field name="last_name">Ivanov</field>
+        <field name="first_name">Petro</field>
+        <field name="phone">+380502222222</field>
+        <field name="relationship">parent</field>
+    </record>
+
+    <record id="demo_contact_3" model="contact.person">
+        <field name="last_name">Koval</field>
+        <field name="first_name">Oksana</field>
+        <field name="phone">+380503333333</field>
+        <field name="relationship">sibling</field>
+    </record>
+
+    <record id="demo_contact_4" model="contact.person">
+        <field name="last_name">Petrenko</field>
+        <field name="first_name">Vasyl</field>
+        <field name="phone">+380504444444</field>
+        <field name="relationship">guardian</field>
+    </record>
+
+    <record id="demo_contact_5" model="contact.person">
+        <field name="last_name">Shevchuk</field>
+        <field name="first_name">Larysa</field>
+        <field name="phone">+380505555555</field>
+        <field name="relationship">spouse</field>
+    </record>
+</odoo>

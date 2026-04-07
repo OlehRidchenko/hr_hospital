@@ -5,8 +5,11 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="birth_date"/>
-                <field name="doctor_id"/>
+                <field name="personal_doctor_id"/>
+                <field name="passport_data"/>
+                <field name="blood_group"/>
+                <field name="insurance_company_id"/>
+                <field name="insurance_policy_number"/>
             </tree>
         </field>
     </record>
@@ -18,10 +21,29 @@
             <form>
                 <sheet>
                     <group>
+                        <field name="first_name"/>
+                        <field name="middle_name"/>
+                        <field name="last_name"/>
                         <field name="name"/>
-                        <field name="birth_date"/>
-                        <field name="doctor_id"/>
+                        <field name="personal_doctor_id"/>
+                        <field name="passport_data"/>
+                        <field name="contact_person_id"/>
+                        <field name="blood_group"/>
+                        <field name="allergies"/>
+                        <field name="insurance_company_id"/>
+                        <field name="insurance_policy_number"/>
                     </group>
+                    <notebook>
+                        <page string="Doctor History">
+                            <field name="doctor_history_ids">
+                                <tree string="Doctor History">
+                                    <field name="patient_id"/>
+                                    <field name="doctor_id"/>
+                                    <field name="assigned_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -31,5 +53,10 @@
         <field name="name">Patients</field>
         <field name="res_model">hr_hospital.patient</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new patient record
+            </p>
+        </field>
     </record>
 </odoo>

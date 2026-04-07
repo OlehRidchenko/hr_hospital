@@ -6,8 +6,15 @@
             <tree>
                 <field name="patient_id"/>
                 <field name="doctor_id"/>
-                <field name="disease_id"/>
-                <field name="visit_date"/>
+                <field name="status"/>
+                <field name="planned_datetime"/>
+                <field name="actual_datetime"/>
+                <field name="visit_type"/>
+                <field name="diagnosis_count"/>
+                <field name="recommendations"/>
+                <field name="currency_id"/>
+                <field name="cost"/>
+                <field name="notes"/>
             </tree>
         </field>
     </record>
@@ -21,8 +28,14 @@
                     <group>
                         <field name="patient_id"/>
                         <field name="doctor_id"/>
-                        <field name="disease_id"/>
-                        <field name="visit_date"/>
+                        <field name="status"/>
+                        <field name="planned_datetime"/>
+                        <field name="actual_datetime"/>
+                        <field name="visit_type"/>
+                        <field name="diagnosis_ids"/>
+                        <field name="recommendations"/>
+                        <field name="currency_id"/>
+                        <field name="cost"/>
                         <field name="notes"/>
                     </group>
                 </sheet>

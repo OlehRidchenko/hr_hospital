@@ -1,0 +1,108 @@
+<odoo>
+    <record id="demo_history_1" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_1"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="assigned_date">2026-01-01</field>
+        <field name="active">True</field>
+    </record>
+    
+    <record id="demo_history_2" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_2"/>
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="assigned_date">2026-01-05</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_3" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_3"/>
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="assigned_date">2026-01-10</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_4" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_4"/>
+        <field name="doctor_id" ref="demo_doctor_4"/>
+        <field name="assigned_date">2026-01-15</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_5" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_5"/>
+        <field name="doctor_id" ref="demo_doctor_5"/>
+        <field name="assigned_date">2026-01-20</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_6" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_6"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="assigned_date">2026-02-01</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_7" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_7"/>
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="assigned_date">2026-02-05</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_8" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_8"/>
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="assigned_date">2026-02-10</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_9" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_9"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="assigned_date">2025-06-01</field>
+        <field name="changed_date">2026-01-01</field>
+        <field name="reason">Patient requested specialist doctor</field>
+        <field name="active">False</field>
+    </record>
+
+    <record id="demo_history_10" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_9"/>
+        <field name="doctor_id" ref="demo_doctor_4"/>
+        <field name="assigned_date">2026-01-01</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_11" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_10"/>
+        <field name="doctor_id" ref="demo_doctor_6"/>
+        <field name="assigned_date">2026-02-15</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_12" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_11"/>
+        <field name="doctor_id" ref="demo_doctor_5"/>
+        <field name="assigned_date">2026-02-20</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_13" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_12"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="assigned_date">2026-03-01</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_14" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_13"/>
+        <field name="doctor_id" ref="demo_doctor_6"/>
+        <field name="assigned_date">2026-03-05</field>
+        <field name="active">True</field>
+    </record>
+
+    <record id="demo_history_15" model="patient.doctor.history">
+        <field name="patient_id" ref="demo_patient_14"/>
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="assigned_date">2026-03-10</field>
+        <field name="active">True</field>
+    </record>
+</odoo>

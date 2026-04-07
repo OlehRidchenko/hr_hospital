@@ -5,7 +5,11 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="specialization"/>
+                <field name="speciality_id"/>
+                <field name="is_intern"/>
+                <field name="mentor_id"/>
+                <field name="experience_years"/>
+                <field name="rating"/>
             </tree>
         </field>
     </record>
@@ -14,12 +18,36 @@
         <field name="name">doctor.form</field>
         <field name="model">hr_hospital.doctor</field>
         <field name="arch" type="xml">
-            <form>
+            <form string="Doctor">
                 <sheet>
                     <group>
+                        <field name="first_name"/>
+                        <field name="middle_name"/>
+                        <field name="last_name"/>
                         <field name="name"/>
-                        <field name="specialization"/>
+                        <field name="user_id"/>
+                        <field name="speciality_id"/>
+                        <field name="is_intern"/>
+                        <field name="mentor_id"/>
                     </group>
+                    <group string="License Information">
+                        <field name="license_number"/>
+                        <field name="license_date"/>
+                        <field name="experience_years" readonly="1"/>
+                        <field name="rating"/>
+                        <field name="study_country_id"/>
+                    </group>
+                    <notebook>
+                        <page string="Schedule">
+                            <field name="schedule_ids">
+                                <tree>
+                                    <field name="day_of_week"/>
+                                    <field name="time_start" widget="float_time"/>
+                                    <field name="time_end" widget="float_time"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -29,5 +57,10 @@
         <field name="name">Doctors</field>
         <field name="res_model">hr_hospital.doctor</field>
         <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Create a new doctor record
+            </p>
+        </field>
     </record>
 </odoo>

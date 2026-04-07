@@ -1,0 +1,244 @@
+<odoo>
+    <record id="demo_visit_1" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_1"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-01 09:00:00</field>
+        <field name="actual_datetime">2026-03-01 09:15:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">500</field>
+    </record>
+
+    <record id="demo_visit_2" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_2"/>
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-02 10:00:00</field>
+        <field name="actual_datetime">2026-03-02 10:10:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">400</field>
+    </record>
+
+    <record id="demo_visit_3" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_3"/>
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-03 11:00:00</field>
+        <field name="actual_datetime">2026-03-03 11:05:00</field>
+        <field name="visit_type">preventive</field>
+        <field name="cost">300</field>
+    </record>
+
+    <record id="demo_visit_4" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_4"/>
+        <field name="doctor_id" ref="demo_doctor_4"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-04 09:30:00</field>
+        <field name="actual_datetime">2026-03-04 09:35:00</field>
+        <field name="visit_type">urgent</field>
+        <field name="cost">800</field>
+    </record>
+
+    <record id="demo_visit_5" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_5"/>
+        <field name="doctor_id" ref="demo_doctor_5"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-05 14:00:00</field>
+        <field name="actual_datetime">2026-03-05 14:20:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">450</field>
+    </record>
+
+    <record id="demo_visit_6" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_6"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-06 10:00:00</field>
+        <field name="actual_datetime">2026-03-06 10:00:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">350</field>
+    </record>
+
+    <record id="demo_visit_7" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_7"/>
+        <field name="doctor_id" ref="demo_doctor_7"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-07 11:00:00</field>
+        <field name="actual_datetime">2026-03-07 11:30:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">400</field>
+    </record>
+
+    <record id="demo_visit_8" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_8"/>
+        <field name="doctor_id" ref="demo_doctor_8"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-10 09:00:00</field>
+        <field name="actual_datetime">2026-03-10 09:10:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">300</field>
+    </record>
+
+    <record id="demo_visit_9" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_9"/>
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-11 13:00:00</field>
+        <field name="actual_datetime">2026-03-11 13:00:00</field>
+        <field name="visit_type">preventive</field>
+        <field name="cost">250</field>
+    </record>
+
+    <record id="demo_visit_10" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_10"/>
+        <field name="doctor_id" ref="demo_doctor_6"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-12 15:00:00</field>
+        <field name="actual_datetime">2026-03-12 15:05:00</field>
+        <field name="visit_type">urgent</field>
+        <field name="cost">1000</field>
+    </record>
+
+    <record id="demo_visit_11" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_11"/>
+        <field name="doctor_id" ref="demo_doctor_5"/>
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-04-10 09:00:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">400</field>
+    </record>
+
+    <record id="demo_visit_12" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_12"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-04-11 10:00:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">350</field>
+    </record>
+
+    <record id="demo_visit_13" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_13"/>
+        <field name="doctor_id" ref="demo_doctor_6"/>
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-04-12 11:00:00</field>
+        <field name="visit_type">preventive</field>
+        <field name="cost">300</field>
+    </record>
+
+    <record id="demo_visit_14" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_14"/>
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="status">cancelled</field>
+        <field name="planned_datetime">2026-03-15 09:00:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">0</field>
+    </record>
+
+    <record id="demo_visit_15" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_15"/>
+        <field name="doctor_id" ref="demo_doctor_4"/>
+        <field name="status">no_show</field>
+        <field name="planned_datetime">2026-03-16 14:00:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">0</field>
+    </record>
+
+    <record id="demo_visit_16" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_1"/>
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-17 10:00:00</field>
+        <field name="actual_datetime">2026-03-17 10:00:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">600</field>
+    </record>
+
+    <record id="demo_visit_17" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_3"/>
+        <field name="doctor_id" ref="demo_doctor_7"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-18 11:00:00</field>
+        <field name="actual_datetime">2026-03-18 11:00:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">400</field>
+    </record>
+
+    <record id="demo_visit_18" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_5"/>
+        <field name="doctor_id" ref="demo_doctor_8"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-19 09:00:00</field>
+        <field name="actual_datetime">2026-03-19 09:00:00</field>
+        <field name="visit_type">urgent</field>
+        <field name="cost">900</field>
+    </record>
+
+    <record id="demo_visit_19" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_7"/>
+        <field name="doctor_id" ref="demo_doctor_3"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-20 13:00:00</field>
+        <field name="actual_datetime">2026-03-20 13:00:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">350</field>
+    </record>
+
+    <record id="demo_visit_20" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_9"/>
+        <field name="doctor_id" ref="demo_doctor_6"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-21 14:00:00</field>
+        <field name="actual_datetime">2026-03-21 14:00:00</field>
+        <field name="visit_type">preventive</field>
+        <field name="cost">500</field>
+    </record>
+
+    <record id="demo_visit_21" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_11"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-22 09:00:00</field>
+        <field name="actual_datetime">2026-03-22 09:00:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">450</field>
+    </record>
+
+    <record id="demo_visit_22" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_13"/>
+        <field name="doctor_id" ref="demo_doctor_5"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-23 10:00:00</field>
+        <field name="actual_datetime">2026-03-23 10:00:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">300</field>
+    </record>
+
+    <record id="demo_visit_23" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_15"/>
+        <field name="doctor_id" ref="demo_doctor_4"/>
+        <field name="status">completed</field>
+        <field name="planned_datetime">2026-03-24 11:00:00</field>
+        <field name="actual_datetime">2026-03-24 11:00:00</field>
+        <field name="visit_type">urgent</field>
+        <field name="cost">750</field>
+    </record>
+
+    <record id="demo_visit_24" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_2"/>
+        <field name="doctor_id" ref="demo_doctor_1"/>
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-04-15 09:00:00</field>
+        <field name="visit_type">primary</field>
+        <field name="cost">500</field>
+    </record>
+
+    <record id="demo_visit_25" model="hr_hospital.visit">
+        <field name="patient_id" ref="demo_patient_4"/>
+        <field name="doctor_id" ref="demo_doctor_2"/>
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-04-16 10:00:00</field>
+        <field name="visit_type">repeated</field>
+        <field name="cost">400</field>
+    </record>
+</odoo>

@@ -1,0 +1,100 @@
+<odoo>
+    <record id="demo_disease_cardiovascular" model="hr_hospital.disease">
+        <field name="name">Cardiovascular Diseases</field>
+        <field name="icd10_code">I00-I99</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious">False</field>
+        <field name="symptoms">Chest pain, shortness of breath, fatigue</field>
+    </record>
+
+    <record id="demo_disease_infectious" model="hr_hospital.disease">
+        <field name="name">Infectious Diseases</field>
+        <field name="icd10_code">A00-B99</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious">True</field>
+        <field name="symptoms">Fever, weakness, inflammation</field>
+        <field name="country_ids" eval="[(4, ref('base.ua')), (4, ref('base.pl'))]"/>
+    </record>
+
+    <record id="demo_disease_respiratory" model="hr_hospital.disease">
+        <field name="name">Respiratory Diseases</field>
+        <field name="icd10_code">J00-J99</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious">True</field>
+        <field name="symptoms">Cough, dyspnea, chest tightness</field>
+    </record>
+
+    <record id="demo_disease_hypertension" model="hr_hospital.disease">
+        <field name="name">Hypertension</field>
+        <field name="parent_id" ref="demo_disease_cardiovascular"/>
+        <field name="icd10_code">I10</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious">False</field>
+        <field name="symptoms">Headache, dizziness, high blood pressure</field>
+    </record>
+
+    <record id="demo_disease_ischemic" model="hr_hospital.disease">
+        <field name="name">Ischemic Heart Disease</field>
+        <field name="parent_id" ref="demo_disease_cardiovascular"/>
+        <field name="icd10_code">I25</field>
+        <field name="danger_level">critical</field>
+        <field name="is_contagious">False</field>
+        <field name="symptoms">Angina, chest pain, shortness of breath</field>
+    </record>
+
+    <record id="demo_disease_influenza" model="hr_hospital.disease">
+        <field name="name">Influenza</field>
+        <field name="parent_id" ref="demo_disease_infectious"/>
+        <field name="icd10_code">J11</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious">True</field>
+        <field name="symptoms">Fever, cough, body aches</field>
+        <field name="country_ids" eval="[(4, ref('base.ua')), (4, ref('base.de'))]"/>
+    </record>
+
+    <record id="demo_disease_pneumonia" model="hr_hospital.disease">
+        <field name="name">Pneumonia</field>
+        <field name="parent_id" ref="demo_disease_respiratory"/>
+        <field name="icd10_code">J18</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious">True</field>
+        <field name="symptoms">Fever, cough with phlegm, chest pain</field>
+    </record>
+
+    <record id="demo_disease_bronchitis" model="hr_hospital.disease">
+        <field name="name">Bronchitis</field>
+        <field name="parent_id" ref="demo_disease_respiratory"/>
+        <field name="icd10_code">J20</field>
+        <field name="danger_level">medium</field>
+        <field name="is_contagious">True</field>
+        <field name="symptoms">Cough, mucus production, fatigue</field>
+    </record>
+
+    <record id="demo_disease_myocardial" model="hr_hospital.disease">
+        <field name="name">Myocardial Infarction</field>
+        <field name="parent_id" ref="demo_disease_ischemic"/>
+        <field name="icd10_code">I21</field>
+        <field name="danger_level">critical</field>
+        <field name="is_contagious">False</field>
+        <field name="symptoms">Severe chest pain, sweating, nausea</field>
+    </record>
+
+    <record id="demo_disease_swine_flu" model="hr_hospital.disease">
+        <field name="name">Swine Influenza</field>
+        <field name="parent_id" ref="demo_disease_influenza"/>
+        <field name="icd10_code">J09</field>
+        <field name="danger_level">high</field>
+        <field name="is_contagious">True</field>
+        <field name="symptoms">High fever, severe cough, muscle pain</field>
+        <field name="country_ids" eval="[(4, ref('base.ua'))]"/>
+    </record>
+
+    <record id="demo_disease_viral_pneumonia" model="hr_hospital.disease">
+        <field name="name">Viral Pneumonia</field>
+        <field name="parent_id" ref="demo_disease_pneumonia"/>
+        <field name="icd10_code">J12</field>
+        <field name="danger_level">critical</field>
+        <field name="is_contagious">True</field>
+        <field name="symptoms">High fever, severe breathing difficulty</field>
+    </record>
+</odoo>
