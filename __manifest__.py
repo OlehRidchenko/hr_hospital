@@ -14,6 +14,7 @@
         'views/visit_views.xml',
         'views/diagnosis_views.xml',
         'views/wizard_views.xml',
+        'report/doctor_report.xml',
 
         'wizards/mass_reassign_doctor_wizard_views.xml',
         'wizards/disease_report_wizard_views.xml',

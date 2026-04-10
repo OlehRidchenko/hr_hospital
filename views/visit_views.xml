@@ -24,11 +24,33 @@
         <field name="model">hr_hospital.visit</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_complete"
+                            type="object"
+                            string="Complete"
+                            class="btn-primary"
+                            invisible="status != 'planned'"/>
+
+                    <button name="action_cancel"
+                            type="object"
+                            string="Cancel"
+                            invisible="status != 'planned'"/>
+
+                    <button name="action_no_show"
+                            type="object"
+                            string="No show"
+                            invisible="status != 'planned'"/>
+
+                    <field name="status"
+                           widget="statusbar"
+                           readonly="1"
+                           statusbar_visible="planned,completed,cancelled,no_show"/>
+                </header>
+
                 <sheet>
                     <group>
                         <field name="patient_id"/>
                         <field name="doctor_id"/>
-                        <field name="status" widget = "statusbar"/>
                         <field name="planned_datetime"/>
                         <field name="actual_datetime"/>
                         <field name="visit_type"/>
