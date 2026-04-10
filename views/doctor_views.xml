@@ -6,6 +6,8 @@
             <tree>
                 <field name="name"/>
                 <field name="speciality_id"/>
+                <field name="phone"/>
+                <field name="email"/>
                 <field name="is_intern"/>
                 <field name="mentor_id"/>
                 <field name="experience_years"/>
@@ -18,32 +20,81 @@
         <field name="name">doctor.form</field>
         <field name="model">hr_hospital.doctor</field>
         <field name="arch" type="xml">
-            <form string="Doctor">
+            <form>
                 <sheet>
                     <group>
-                        <field name="first_name"/>
-                        <field name="middle_name"/>
-                        <field name="last_name"/>
-                        <field name="name"/>
-                        <field name="user_id"/>
-                        <field name="speciality_id"/>
-                        <field name="is_intern"/>
-                        <field name="mentor_id"/>
+                        <group string="Personal Information">
+                            <field name="first_name"/>
+                            <field name="middle_name"/>
+                            <field name="last_name"/>
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="birth_date"/>
+                            <field name="phone"/>
+                            <field name="email"/>
+                            <field name="user_id"/>
+                        </group>
+
+                        <group string="Professional Information">
+                            <field name="speciality_id"/>
+                            <field name="license_number"/>
+                            <field name="license_date"/>
+                            <field name="experience_years"/>
+                            <field name="rating"/>
+                            <field name="study_country_id"/>
+                            <field name="is_intern"/>
+                            <field name="mentor_id"
+                                   invisible="not is_intern"
+                                   required="is_intern"/>
+                        </group>
                     </group>
-                    <group string="License Information">
-                        <field name="license_number"/>
-                        <field name="license_date"/>
-                        <field name="experience_years" readonly="1"/>
-                        <field name="rating"/>
-                        <field name="study_country_id"/>
-                    </group>
+
                     <notebook>
-                        <page string="Schedule">
+                        <page string="Mentor Info">
+                            <group>
+                                <field name="mentor_id" readonly="1"/>
+                            </group>
+                        </page>
+
+                        <page string="Interns">
+                            <field name="intern_ids">
+                                <kanban>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_card oe_kanban_global_click">
+                                                <div class="oe_kanban_content">
+                                                    <strong>
+                                                        <field name="name"/>
+                                                    </strong>
+                                                    <div>
+                                                        <i class="fa fa-stethoscope me-1"/>
+                                                        <field name="speciality_id"/>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa fa-briefcase me-1"/>
+                                                        License: <field name="license_number"/>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa fa-star me-1"/>
+                                                        Rating: <field name="rating"/></div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+
+                        <page string="Work Schedule">
                             <field name="schedule_ids">
-                                <tree>
+                                <tree editable="bottom">
+                                    <field name="date"/>
                                     <field name="day_of_week"/>
+                                    <field name="schedule_type"/>
                                     <field name="time_start" widget="float_time"/>
                                     <field name="time_end" widget="float_time"/>
+                                    <field name="duration" widget="float_time"/>
+                                    <field name="notes"/>
                                 </tree>
                             </field>
                         </page>
@@ -53,10 +104,105 @@
         </field>
     </record>
 
+    <record id="doctor_view_search" model="ir.ui.view">
+        <field name="name">doctor.search</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Mentors"
+                        name="mentors"
+                        domain="[('is_intern', '=', False), ('intern_ids', '!=', False)]"/>
+                <filter string="Interns"
+                        name="interns"
+                        domain="[('is_intern', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="doctor_view_kanban" model="ir.ui.view">
+        <field name="name">doctor.kanban</field>
+        <field name="model">hr_hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="speciality_id">
+                <field name="id"/>
+                <field name="name"/>
+                <field name="speciality_id"/>
+                <field name="is_intern"/>
+                <field name="intern_ids"/>
+                <field name="rating"/>
+                <field name="license_number"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+
+                            <div class="o_dropdown_kanban dropdown float-end oe_kanban_global_click"
+                                 style="position:absolute; top:0; right:0;">
+                                <a class="dropdown-toggle o-no-caret btn"
+                                   data-bs-toggle="dropdown"
+                                   href="#"
+                                   aria-label="Dropdown menu"
+                                   title="Dropdown menu">
+                                    <span class="fa fa-ellipsis-v"/>
+                                </a>
+
+                                <div class="dropdown-menu" role="menu">
+                                    <a role="menuitem"
+                                       type="edit"
+                                       class="dropdown-item">Edit</a>
+                                    <a role="menuitem"
+                                       type="delete"
+                                       class="dropdown-item">Delete</a>
+                                    <a role="menuitem"
+                                       type="open"
+                                       class="dropdown-item">Open</a>
+                                </div>
+                            </div>
+
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top mb-1">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </strong>
+                                </div>
+
+                                <div class="o_kanban_record_body">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fa fa-stethoscope me-1"/>
+                                        <field name="speciality_id"/>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fa fa-star me-1"/>
+                                        Rating: <field name="rating"/>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fa fa-users me-1"/>
+                                        Interns:
+                                    </div>
+                                    <field name="intern_ids"
+                                           widget="many2many_tags"/>
+                                </div>
+                            </div>
+
+                            <div class="oe_kanban_footer mt-2">
+                                <button name="action_quick_visit"
+                                        type="object"
+                                        class="btn btn-primary btn-sm w-100"
+                                        string="Book Appointment"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record id="doctor_action" model="ir.actions.act_window">
         <field name="name">Doctors</field>
         <field name="res_model">hr_hospital.doctor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search,kanban</field>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
                 Create a new doctor record

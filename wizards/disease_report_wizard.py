@@ -88,19 +88,11 @@ class DiseaseReportWizard(models.TransientModel):
             raise ValidationError(
                 "No diagnoses found for the selected criteria!"
             )
-
-        context = {}
-        if self.group_by:
-            context[f"search_default_{self.group_by}"] = 1
-
         return {
             "type": "ir.actions.act_window",
-            "name": (
-                f"Disease Report "
-                f"({self.date_from} — {self.date_to})"
-            ),
+            "name": f"Disease Report ({self.date_from} – {self.date_to})",
             "res_model": "medical.diagnosis",
             "view_mode": "list,form",
             "domain": [("id", "in", diagnoses.ids)],
-            "context": context,
+            "context": {"search_default_group_disease": 1},
         }

@@ -47,9 +47,27 @@
         </field>
     </record>
 
+    <record id="disease_view_search" model="ir.ui.view">
+        <field name="name">disease.search</field>
+        <field name="model">hr_hospital.disease</field>
+        <field name="arch" type="xml">
+            <search>
+                <searchpanel>
+                    <field name="parent_id"
+                           string="Disease Category"
+                           hierarchize="1"
+                           enable_counters="1"/>
+                    <field name="danger_level"
+                           string="Danger Level"
+                           enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
     <record id="disease_action" model="ir.actions.act_window">
         <field name="name">Diseases</field>
         <field name="res_model">hr_hospital.disease</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
 </odoo>

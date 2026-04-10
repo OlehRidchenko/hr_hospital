@@ -8,6 +8,7 @@
                 <field name="personal_doctor_id"/>
                 <field name="passport_data"/>
                 <field name="blood_group"/>
+                <field name="phone"/>
                 <field name="insurance_company_id"/>
                 <field name="insurance_policy_number"/>
             </tree>
@@ -19,33 +20,89 @@
         <field name="model">hr_hospital.patient</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_view_visits"
+                            string="Visit History"
+                            type="object"
+                            class="oe_highlight"
+                            icon="fa-calendar"/>
+                </header>
                 <sheet>
                     <group>
-                        <field name="first_name"/>
-                        <field name="middle_name"/>
-                        <field name="last_name"/>
-                        <field name="name"/>
-                        <field name="personal_doctor_id"/>
-                        <field name="passport_data"/>
-                        <field name="contact_person_id"/>
-                        <field name="blood_group"/>
-                        <field name="allergies"/>
-                        <field name="insurance_company_id"/>
-                        <field name="insurance_policy_number"/>
+                        <group string="Personal Information">
+                            <field name="first_name"/>
+                            <field name="middle_name"/>
+                            <field name="last_name"/>
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="birth_date"/>
+                            <field name="phone"/>
+                            <field name="passport_data"/>
+                            <field name="contact_person_id"/>
+                        </group>
+                        <group string="Medical Information">
+                            <field name="personal_doctor_id"/>
+                            <field name="blood_group"/>
+                            <field name="allergies"/>
+                            <field name="insurance_company_id"/>
+                            <field name="insurance_policy_number"/>
+                        </group>
                     </group>
+
                     <notebook>
+                        <page string="Quick Appointment">
+                            <field name="quick_visit_ids"
+                                   context="{'default_patient_id': active_id}">
+                                <tree string="Visits" editable="bottom">
+                                    <field name="doctor_id" required="1"/>
+                                    <field name="planned_datetime" required="1"/>
+                                    <field name="visit_type"/>
+                                    <field name="status"/>
+                                </tree>
+                            </field>
+                        </page>
+
                         <page string="Doctor History">
                             <field name="doctor_history_ids">
                                 <tree string="Doctor History">
                                     <field name="patient_id"/>
                                     <field name="doctor_id"/>
                                     <field name="assigned_date"/>
+                                    <field name="changed_date"/>
+                                    <field name="active"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="Diagnosis History">
+                            <field name="diagnosis_history_ids"
+                                   readonly="1">
+                                <tree string="Diagnosis History"
+                                      create="false"
+                                      delete="false">
+                                    <field name="visit_id"/>
+                                    <field name="doctor_id"/>
+                                    <field name="disease_id"/>
+                                    <field name="severity"/>
+                                    <field name="is_approved"/>
+                                    <field name="description"/>
                                 </tree>
                             </field>
                         </page>
                     </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="patient_view_search" model="ir.ui.view">
+        <field name="name">patient.search</field>
+        <field name="model">hr_hospital.patient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="phone"/>
+            </search>
         </field>
     </record>
 

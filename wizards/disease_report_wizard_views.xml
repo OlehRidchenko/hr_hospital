@@ -11,11 +11,8 @@
                         <field name="date_to"/>
                         <field name="doctor_ids" widget="many2many_tags"/>
                         <field name="disease_ids" widget="many2many_tags"/>
-                        <field name="country_ids" widget="many2many_tags"/>
                     </group>
-                    <group string="Report Settings">
-                        <field name="report_type"/>
-                        <field name="group_by"/>
+                    <group string="Info">
                         <field name="result_count" readonly="1"/>
                     </group>
                 </group>
@@ -100,5 +97,8 @@
         <field name="res_model">disease.report.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
+        <field name="binding_model_id" ref="hr_hospital.model_hr_hospital_doctor"/>
+        <field name="binding_view_types">list,form</field>
+        <field name="binding_type">action</field>
     </record>
 </odoo>
